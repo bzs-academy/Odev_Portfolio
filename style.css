@@ -1,0 +1,610 @@
+:root {
+    --bgWhite: #f5f5f5;
+    --textShadow: #212020;
+    --fullWidth: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+}
+
+/* Style the navbar ***********************************************************/
+
+#navbar {
+    overflow: hidden;
+    background-color: var(--bgWhite);
+    width: var(--fullWidth);
+    height: 60px;
+    padding: 10px;
+    margin-top: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    
+}
+  
+#navbar a {
+    float: left;
+    display: block;
+    margin: 5px 20px;
+    padding: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: scale 0.5s linear;
+
+}
+  
+#navbar a:first-child {
+    margin-left: 70px;
+}
+
+#navbar a:hover {
+    border-bottom: 1px solid orange;
+    box-sizing: border-box;
+    font-weight: 900;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 992px) {
+    #navbar {
+        height: auto;
+    }
+    #navbar a {
+        float: none;
+        margin: 10px;
+        font-size: 1rem;
+    }
+    #navbar a:first-child {
+        margin-left: 0;
+    }
+    #navbar a:hover {
+        border-bottom: none;
+        background: #d5d5d5
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #navbar {
+        height: auto;
+    }
+    #navbar a {
+        margin: 5px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Style the banner *******************************************************/
+
+.banner {
+    background-image: url("./developer.jpg");
+    background-position: center;
+    background-size: cover;
+    width: var(--fullWidth);
+    height: calc(100vh - 100px);
+    margin-top: 10px;
+    position: relative;
+}
+
+.banner h1 {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem;
+    font-style: italic ;
+    text-align: center;
+    text-shadow: 5px 5px 10px var(--textShadow);
+    color: orange;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 8px;
+}
+
+.banner p {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 5px 5px 10px var(--textShadow);
+    font-family: 'Lobster', cursive;
+    font-style: italic ;
+    text-align: center;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+
+@media screen and (max-width: 992px) {
+    .banner {
+        height: calc(100vh - 220px);
+    }
+    .banner h1 {
+        font-size: 3rem;
+        bottom: 170px;
+        letter-spacing: 4px;
+    }
+    .banner p {
+        bottom: 70px;
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: calc(100vh - 180px);
+    }
+    .banner h1 {
+        font-size: 1.5rem;
+        bottom: 150px;
+        letter-spacing: 1px;
+    }
+    .banner p {
+        bottom: 70px;
+    }
+}
+/* Style the skills *************************************************************/
+
+/* general settings --------------------------------------------------------*/
+.skills {
+    padding-top: 60px;
+    margin-top: -60px;
+    width: 100%;
+    height: 100vh;
+}
+
+.skills h1 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.skills div table {
+    margin: 30px auto;
+    width: 60%;
+    border-collapse: collapse;
+}
+
+.skills div table tr th, td {
+    border-bottom: 1px solid #eee9e9;
+    border-right: 1px solid #eee9e9;
+    padding: 20px;
+} 
+.skills div table tr th:nth-of-type(4), td:nth-of-type(4) {
+    border-right: none;
+} 
+
+
+/* settings of <th> --------------------------------------------------------*/
+
+.skills div table tr th:nth-of-type(2) {
+    padding: 20px;
+    font-size: 60px;
+    background: #8dee8d;
+}
+
+.skills div table tr th:nth-of-type(3) {
+    padding: 20px;
+    font-size: 60px;
+    background: #a5b6ed;
+}
+
+.skills div table tr th:nth-of-type(4) {
+    padding: 20px;
+    font-size: 60px;
+    background: #f1c084;
+}
+
+.skills div table tr th > .fab {
+   color: white;
+   transition: scale 1s linear;
+   text-shadow: 4px 4px 10px black;
+}
+
+.skills div table tr th:hover > .fab {
+    transform: scale(1.3);
+ }
+
+/* setiings of <td> -------------------------------------------------------*/
+
+.skills div table tr > td {
+    text-align: center;
+}
+
+.skills div table tr > td:nth-of-type(1) {
+    font-weight: 1000;
+    font-size: 1.2rem;
+    text-align: left;
+    /* background: lightgray; */
+}
+
+.skills div table tr td:nth-of-type(2) > .far {
+    color: green;
+}
+
+.skills div table tr td:nth-of-type(3) > .far {
+    color: blue;
+}
+
+.skills div table tr td:nth-of-type(4) > .far {
+    color: orange;
+}
+
+.skills div table tr td > .far {
+    padding: 0 3px;
+    font-size: 1.2rem
+}
+
+@media screen and (max-width: 992px) {
+    /* general settings ----*/
+
+    .skills {
+        padding-top: 180px;
+        margin-top: -180px;
+    }
+    .skills h1 {
+        font-size: 2.5rem;
+    } 
+    .skills div table {
+        margin: auto;
+        width: 95%; 
+    } 
+    .skills div table tr th, td {
+        padding: 10px;
+    } 
+    
+    /* settings of <th> ------------*/
+
+    .skills div table tr th:nth-of-type(2) {
+        font-size: 50px;
+    }
+    .skills div table tr th:nth-of-type(3) {
+        font-size: 50px;
+    }
+    .skills div table tr th:nth-of-type(4) {
+        font-size: 50px;
+    }
+
+    /* setiings of <td> --------------*/
+
+    .skills div table tr > td:nth-of-type(1) {
+        font-size: 1.1rem;
+    }
+    .skills div table tr td > .far {
+        padding: 0 3px;
+        font-size: 0.8rem
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* general settings ----*/
+
+    .skills {
+        padding-top: 110px;
+        margin-top: -110px;
+    }
+    .skills h1 {
+        font-size: 2rem;
+    } 
+    
+    .skills div table tr th, td {
+        padding: 5px;
+    } 
+    
+    /* settings of <th> ------------*/
+
+    .skills div table tr th:nth-of-type(2) {
+        font-size: 30px;
+    }
+    .skills div table tr th:nth-of-type(3) {
+        font-size: 30px;
+    }
+    .skills div table tr th:nth-of-type(4) {
+        font-size: 30px;
+    }
+
+    /* setiings of <td> --------------*/
+
+    .skills div table tr > td:nth-of-type(1) {
+        font-size: 0.8rem;
+    }
+    .skills div table tr td > .far {
+        padding: 0 1px;
+        font-size: 0.5rem
+    }
+}
+
+/* About Me  ***************************************************************/
+
+#aboutme {
+    padding-top: 60px;
+    margin-top: -60px;
+    width: 100%;
+    height: 100vh;
+}
+
+#aboutme div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#aboutme div img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#aboutme div h1 {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Lobster', cursive;
+    font-size: 4rem;
+}
+
+#aboutme div .text-box {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: rgba(237, 191, 8, 0.7);
+    border-radius: 20px;
+    z-index: 10;
+    display: table;
+}
+
+#aboutme div .text-box p {
+    padding: 40px;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 3px;
+    display: table-cell; 
+    vertical-align: middle; 
+    line-height: 35px;
+    text-align: justify;
+    text-indent: 40px;
+}
+#aboutme div .text-box p span {
+    text-transform: capitalize;
+    font-size: 50px;
+}
+
+@media screen and (max-width: 992px) {
+    #aboutme {
+        padding-top: 180px;
+        margin-top: -180px;
+    }
+    #aboutme div h1 {
+        font-size: 3rem;
+    }
+    #aboutme div .text-box {
+        width: 450px;
+        height: 300px;
+    }
+    #aboutme div .text-box p {
+        padding: 20px;
+        letter-spacing: 2px;
+        line-height: 20px;
+        text-indent: 30px;
+    }
+    #aboutme div .text-box p span {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #aboutme {
+        padding-top: 110px;
+        margin-top: -110px;
+    }
+    #aboutme div h1 {
+        font-size: 2rem;
+    }
+    #aboutme div .text-box {
+        width: 350px;
+        height: auto;
+    }
+    #aboutme div .text-box p {
+       
+        line-height: 11px;
+        font-size: 11px;
+    }
+    #aboutme div .text-box p span {
+        font-size: 30px;
+    }
+}
+
+/* Projects  ***************************************************************/
+
+#projects {
+    padding-top: 60px;
+    margin-top: -60px;
+    width: 100%;
+    height: 100vh;
+}
+
+#projects h1 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+#projects .content {
+    margin: 30px auto;
+    width: 75%;
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+}
+
+#projects .content .pro-box {
+    flex: 1;
+    margin: 60px;
+    height: 500px;
+    border-radius: 60px;
+    position: relative;
+}
+#projects .content .pro-box:nth-of-type(1) {
+    border: 5px solid #7DAA55;
+}
+#projects .content .pro-box:nth-of-type(2) {
+    border: 5px solid #A5A6E8;
+}
+#projects .content .pro-box:nth-of-type(3) {
+    border: 5px solid #F8C547;
+}
+#projects .content .pro-box > h2 {
+    text-align: center;
+    padding: 20px;
+}
+#projects .content .pro-box > img {
+    width: 100%;
+    height: 300px;
+    padding: 0 20px;
+}
+#projects .content .pro-box > p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+#projects .content .pro-box a {
+    width: 100%;
+    height: 51px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 60px 60px;
+    font-size: 1rem;
+    text-decoration: none;
+    color: white; 
+}
+#projects .content .pro-box:nth-of-type(1) a {
+    background: #7DAA55;
+}
+#projects .content .pro-box:nth-of-type(2) a {
+    background: #A5A6E8;
+}
+#projects .content .pro-box:nth-of-type(3) a {
+    background: #F8C547;
+}
+#projects .content .pro-box a:hover {
+    color: blue;
+}
+
+@media screen and (max-width: 992px) {
+    #projects {
+        padding-top: 180px;
+        margin-top: -180px;
+        height: auto;
+    }
+    #projects h1 {
+        font-size: 3rem;
+    }
+    #projects .content {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    #projects .content .pro-box {
+        display: block;
+        margin: 30px auto;
+        width: 60%;
+        height: 400px;
+    }
+    #projects .content .pro-box > h2 {
+        font-size: 1.1rem;
+        padding-top: 20px;
+    }
+    #projects .content .pro-box > img {
+        height: 200px;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #projects {
+        padding-top: 110px;
+        margin-top: -110px;
+    }
+    #projects h1 {
+        font-size: 1.5rem;
+    }
+    
+    #projects .content .pro-box {
+        margin: 20px auto;
+        height: 300px;
+    }
+    #projects .content .pro-box > h2 {
+        font-size: 1rem;
+        padding-top: 20px;
+    }
+    #projects .content .pro-box > img {
+        height: 120px;
+        margin: 10px auto;
+    }
+    #projects .content .pro-box > p {
+        font-size: 0.7rem;
+    }
+    #projects .content .pro-box a {
+        font-size: 0.8rem;
+    }
+}
+
+/* Back to Home  ***************************************************************/
+
+.home {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    text-align: center;
+    background: orange;
+    cursor: pointer;
+}
+.home a {
+    text-decoration: none;
+    font-weight: 900;
+    color: white;
+    font-size: 30px;
+}
+.home:hover{
+    background: #6161f0;
+}
+.home:hover a {
+    color: orange;
+}
+
+@media screen and (max-width: 992px) {
+    .home {
+        right: 30px;
+        bottom: 30px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    .home a {
+        font-size: 20px;
+    }
+}
